@@ -1,0 +1,20 @@
+# jenkins-casc.yaml
+
+jenkins:
+  systemMessage: "Jenkins configured for Whanos Epitech project. 🐋\n\n"
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "admin"
+          password: "password"
+  authorizationStrategy: loggedInUsersCanDoAnything
+
+security:
+  envInject:
+    hideInjectedVars: true
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: false
+
+jobs:
+  - file: /usr/share/jenkins/ref/seed.groovy
